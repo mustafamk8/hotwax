@@ -1,6 +1,8 @@
 package com.project.model;
 
 
+import org.hibernate.annotations.GenericGenerator;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,6 +18,11 @@ import lombok.Setter;
 @Table(name = "Product")
 public class Product {
     @Id
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+        name = "UUID",
+    strategy = "org.hibernate.id.UUIDGenerator"
+    )
     @Column(name = "PRODUCT_ID", length = 40, nullable = false)
     private String productId;
 
@@ -39,6 +46,9 @@ public class Product {
     private Party ownerParty;
 
     // Constructors, getters, and setters
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
 
     // Rest of the code...
 }

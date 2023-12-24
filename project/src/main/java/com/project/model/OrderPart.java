@@ -10,6 +10,8 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Getter
 @Setter
@@ -18,6 +20,11 @@ import java.math.BigDecimal;
 @Table(name = "Order_Part")
 public class OrderPart {
     @Id
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+        name = "UUID",
+    strategy = "org.hibernate.id.UUIDGenerator"
+    )
     @Column(name = "ORDER_ID", length = 40, nullable = false)
     private String orderId;
 

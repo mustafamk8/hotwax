@@ -30,13 +30,13 @@ public class PersonService {
         return personRepository.save(person);
     }
 
-    public Person updatePerson(String partyId, Person updatedPerson) {
-        if (personRepository.existsById(partyId)) {
-            updatedPerson.setPartyId(partyId);
-            return personRepository.save(updatedPerson);
-        }
-        return null; // Handle not found scenario as needed
-    }
+//    public Person updatePerson(String partyId, Person updatedPerson) {
+//        if (personRepository.existsById(partyId)) {
+//            updatedPerson.setPartyId(partyId);
+//            return personRepository.save(updatedPerson);
+//        }
+//        return null; // Handle not found scenario as needed
+//    }
 
     public void deletePerson(String partyId) {
         personRepository.deleteById(partyId);

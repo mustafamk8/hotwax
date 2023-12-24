@@ -1,7 +1,6 @@
 package com.project.model;
 
-import java.io.Serializable;
-import java.util.Date;
+
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -16,6 +15,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Table(name = "Person")
 public class Person {
+
     @Id
     @Column(name = "PARTY_ID", length = 40, nullable = false)
     private String partyId;
@@ -36,7 +36,7 @@ public class Person {
     private String gender;
 
     @Column(name = "BIRTH_DATE")
-    private Date birthDate;
+    private String birthDate;
 
     @Column(name = "MARITAL_STATUS_ENUM_ID", length = 40)
     private String maritalStatusEnumId;
@@ -51,12 +51,11 @@ public class Person {
     @JoinColumn(name = "PARTY_ID", referencedColumnName = "PARTY_ID", insertable = false, updatable = false)
     private Party party;
 
-    // Getters and setters
-
-    public void setPartyId(String partyId) {
-        this.partyId = partyId;
+    public Person() {
+        // Default constructor
     }
-    
+
+    // Getters and setters...
+
     // Rest of the code...
 }
-

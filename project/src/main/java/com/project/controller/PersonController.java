@@ -40,11 +40,11 @@ public class PersonController {
         return new ResponseEntity<>(createdPerson, HttpStatus.CREATED);
     }
 
-    @PutMapping("/{partyId}")
-    public ResponseEntity<Person> updatePerson(@PathVariable String partyId, @RequestBody Person updatedPerson) {
-        Person person = personService.updatePerson(partyId, updatedPerson);
-        return person != null ? ResponseEntity.ok(person) : ResponseEntity.notFound().build();
-    }
+//    @PutMapping("/{partyId}")
+//    public ResponseEntity<Person> updatePerson(@PathVariable String partyId, @RequestBody Person updatedPerson) {
+//        Person person = personService.updatePerson(partyId, updatedPerson);
+//        return person != null ? ResponseEntity.ok(person) : ResponseEntity.notFound().build();
+//    }
 
     @DeleteMapping("/{partyId}")
     public ResponseEntity<Void> deletePerson(@PathVariable String partyId) {
